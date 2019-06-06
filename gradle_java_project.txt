@@ -1,0 +1,45 @@
+https://www.petrikainulainen.net/programming/gradle/getting-started-with-gradle-our-first-java-project/
+https://www.petrikainulainen.net/tutorials/
+https://www.softpost.org/gradle/gradle-project-commandline/
+https://www.toolsqa.com/selenium-webdriver/browser-commands/
+
+https://github.com/vicsz/testng-selenium-gradle-example
+https://stackoverflow.com/questions/43606992/run-a-specific-testng-xml-test-suite-with-gradle-from-command-line/43642736
+https://www.swtestacademy.com/how-to-use-testng-with-gradle/
+https://www.swtestacademy.com/testng-tutorial/
+https://www.guru99.com/testng-execute-multiple-test-suites.html
+https://www.swtestacademy.com/selenium-parallel-tests-grid-testng/#776de01642bd585c3
+https://www.swtestacademy.com/selenium-parallel-tests-grid-testng/
+
+https://www.swtestacademy.com/selenium-parallel-tests-grid-testng/#776de01642bd585c3
+https://www.swtestacademy.com/category/test-automation/ui-automation/selenium/
+https://www.petrikainulainen.net/programming/testing/packaging-testproject-tests-and-addons-with-gradle/
+
+https://www.youtube.com/watch?v=0Gew2XOuum8
+https://www.youtube.com/watch?v=NqN3JNpZZiY
+https://www.guru99.com/cross-browser-testing-using-selenium.html
+https://www.softwaretestinghelp.com/how-to-use-different-browsers-drivers-for-your-selenium-script/
+https://itnext.io/a-complete-guide-for-your-first-testng-automation-script-51433fb997d3
+
+https://www.softwaretestingmaterial.com/testng-tutorial/
+
+https://www.softwaretestingmaterial.com/create-testng-xml-file/
+
+https://github.com/bonigarcia/webdrivermanager (Checkout this when expert)
+https://www.toolsqa.com/selenium-webdriver/webdrivermanager/ (Checkout this when expert)
+
+https://vanilla-project.guide/java/gradle-command-line/
+https://github.com/vanilla-project/java-gradle-command-line
+
+https://www.quora.com/How-can-I-develop-enterprise-web-apps-using-Spring-without-any-IDE-like-Eclipse-NetBeans-STS-or-any-such-but-only-using-Vim-and-Linux-console
+
+Selenium working docker code
+https://examples.javacodegeeks.com/enterprise-java/selenium/selenium-docker-example/
+
+https://www.swtestacademy.com/docker-selenium-tutorial/
+https://www.javacodegeeks.com/2017/11/docker-java-developers-build-docker.html
+
+https://github.com/SeleniumHQ/docker-selenium (works)
+
+Docker swarm selenium grid
+https://dzone.com/articles/deploying-selenium-grid-using-docker

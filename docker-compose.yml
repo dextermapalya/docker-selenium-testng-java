@@ -1,0 +1,84 @@
+version: "3"
+services:
+  selenium-hub:
+    image: selenium/hub
+    container_name: selenium-hub
+    ports:
+      - "4444:4444"
+
+  # Using Appium Docker Android  
+  real_device:
+    image: appium/appium
+    depends_on:
+      - selenium-hub
+    #network_mode: "service:selenium_hub"
+    privileged: true
+    volumes:
+      - /dev/bus/usb:/dev/bus/usb
+      - ~/.android:/root/.android
+      - $PWD:/root/tmp
+    environment:
+      - CONNECT_TO_GRID=true
+      - SELENIUM_HOST=selenium-hub
+      - SELENIUM_HUB=selenium-hub
+      - HUB_PORT_4444_TCP_ADDR=selenium-hub
+      - HUB_PORT_4444_TCP_PORT=4444
+      # Enable it for msite testing
+      #- BROWSER_NAME=chrome
+
+  # Docker-Android for Android application testing
+  nexus_7.1.1:
+    image: budtmo/docker-android-x86-7.1.1
+    privileged: true
+    # Increase scale number if needed
+    #scale: 1
+    depends_on:
+      - selenium-hub
+      - real_device
+    ports:
+      - 6080
+    #networks:
+    #   - appium_selenium
+    # Change path of apk that you want to test. I use sample_apk that I provide in folder "example"
+    volumes:
+      - $PWD/example/sample_apk:/root/tmp/sample_apk
+      - ./video-nexus_7.1.1:/tmp/video
+    environment:
+      - DEVICE=Nexus 5
+      - CONNECT_TO_GRID=true
+      - APPIUM=true
+      - SELENIUM_HOST=selenium-hub
+      - SELENIUM_HUB=selenium-hub
+      #- AUTO_RECORD=true
+    
+  chrome:
+    image: selenium/node-chrome
+    depends_on:
+      - selenium-hub
+    environment:
+      - HUB_PORT_4444_TCP_ADDR=selenium-hub
+      - HUB_PORT_4444_TCP_PORT=4444
+  firefox:
+    image: selenium/node-firefox
+    depends_on:
+      - selenium-hub
+    environment:
+      - HUB_PORT_4444_TCP_ADDR=selenium-hub
+      - HUB_PORT_4444_TCP_PORT=4444
+
+  test-module:
+       #image: vinsdocker/containertest:demo
+       build:
+         context: .
+         dockerfile: Dockerfile.gradle
+       privileged: true
+       container_name: test-module
+       depends_on:
+        - chrome
+        - firefox
+       environment:
+        - MODULE=search-module.xml
+        - BROWSER=chrome
+        - SELENIUM_HUB=selenium-hub
+       volumes:
+         - $PWD:/usr/app    

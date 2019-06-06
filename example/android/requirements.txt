@@ -1,0 +1,6 @@
+Appium-Python-Client
+selenium==3.141.0
+pytest
+pytest-xdist
+uiautomator
+uiautomator2
